@@ -49,12 +49,8 @@ jobs:
         key: python-venv-${{ hashFiles('requirements.txt') }}
 
     - name: Install SDK and Toolchain
-      run: |
-        make setup || (
-          echo "dumping log:" &&
-          cat /home/runner/work/tuya-zigbee-switch/tuya-zigbee-switch/silabs_tools/slc-cli/bin/slc-cli/configuration/*.log
-        )
-
+      run: make telink/tools/all setup_venv
+      
     - name: Clear out index files
       run: |
         source .venv/bin/activate
