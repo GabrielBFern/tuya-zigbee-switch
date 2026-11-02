@@ -3576,6 +3576,33 @@ REMOTE_LIDL_BUTTON_TS004F:
   info: Lower battery life
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/388
   store: null
+REMOTE_LORATAP_SS9600ZB:
+  human_name: LoraTap SS9600ZB-V2 6-button wireless remote
+  category: remote
+  power: CR2032
+  neutral: without
+  output: nothing
+  device_type: end_device
+  stock_model_name: TS0046
+  stock_manufacturer_name: _TZ3000_iszegwpd
+  stock_converter_manufacturer: Tuya
+  stock_converter_model: TS0046
+  override_z2m_device: null
+  tuya_module: ZT3L
+  mcu_family: Telink
+  mcu: TLSR8258
+  config_str: iszegwpd;TS0046-LT;LD7;SC2u;SA0u;SD4u;SC0u;SB4u;SB5u;M;BTC4;
+  alt_config_str: null
+  old_manufacturer_names: null
+  old_zb_models: null
+  stock_manufacturer_id: 4417
+  stock_image_type: 54179
+  firmware_image_type: 47119
+  build: yes
+  status: in_progress
+  info: Pin order still being verified
+  threads: null
+  store: https://www.aliexpress.com/item/1005007048362396.html
 REMOTE_MOES_SWITCH_A_TS0041:
   human_name: Moes 1-gang scene switch (multiple variants)
   category: remote
@@ -6443,23 +6470,3 @@ SWITCH_ZEMISMART_TS0601_6GANG:
   info: Needs pinout. Secondary MCU. 6-gang!
   threads: https://github.com/romasku/tuya-zigbee-switch/issues/209
   store: https://www.zemismart.com/products/tb26-6
-TS0046_LORATAP_SS9600ZB:
-  human_name: LoraTap SS9600ZB-V2 6-button wireless remote
-  power: CR2032
-  neutral: without
-  device_type: end_device
-  mcu: TLSR8258
-  stock_model_name: TS0046
-  stock_manufacturer_name: _TZ3000_iszegwpd
-  stock_converter_manufacturer: Tuya
-  stock_converter_model: TS0046
-  tuya_module: ZT3L
-  mcu_family: Telink
-  config_str: loratap;SS9600ZB-V2;LD7;SC2u;SA0u;SD4u;SC0u;SB4u;SB5u;M;BTC4;
-  stock_manufacturer_id: 4417
-  stock_image_type: 54179
-  firmware_image_type: 47119
-  build: yes
-  status: in_progress
-  info: Pin order still being verified
-  store: https://www.aliexpress.com/item/1005007048362396.html
