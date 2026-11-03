@@ -427,8 +427,7 @@ const definitions = [
         vendor: "Tuya-custom",
         description: "Custom switch (https://github.com/romasku/tuya-zigbee-switch)",
         extend: [
-            romasku.batteryPercentage(),
-            deviceEndpoints({ endpoints: {"switch_0": 1, "switch_1": 2, "switch_2": 3, "switch_3": 4, "switch_4": 5, } }),
+            deviceEndpoints({ endpoints: {"switch_0": 1, "switch_1": 2, "switch_2": 3, "switch_3": 4, "switch_4": 5, "switch_5": 6, } }),
             romasku.deviceConfig("device_config", "switch_0"),
             romasku.multiPressResetCount("multi_press_reset_count", "switch_0"),
             romasku.networkIndicator("network_led", "switch_0"),
@@ -462,6 +461,12 @@ const definitions = [
             romasku.bindedMode("switch_4_binded_mode", "switch_4"),
             romasku.longPressDuration("switch_4_long_press_duration", "switch_4"),
             romasku.levelMoveRate("switch_4_level_move_rate", "switch_4"),
+            romasku.pressAction("switch_5_press_action", "switch_5"),
+            romasku.switchMode("switch_5_mode", "switch_5"),
+            romasku.switchAction("switch_5_action_mode", "switch_5"),
+            romasku.bindedMode("switch_5_binded_mode", "switch_5"),
+            romasku.longPressDuration("switch_5_long_press_duration", "switch_5"),
+            romasku.levelMoveRate("switch_5_level_move_rate", "switch_5"),
         ],
         meta: { multiEndpoint: true },
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -520,18 +525,17 @@ const definitions = [
                     reportableChange: 1,
                 },
             ]);
-            // Battery reporting
-            const batteryEndpoint = device.getEndpoint(1);
-            await reporting.bind(batteryEndpoint, coordinatorEndpoint, ["genPowerCfg"]);
-            await batteryEndpoint.configureReporting("genPowerCfg", [
+            const endpoint6 = device.getEndpoint(6);
+            await reporting.bind(endpoint6, coordinatorEndpoint, ["genMultistateInput"]);
+            // switch action:
+            await endpoint6.configureReporting("genMultistateInput", [
                 {
-                    attribute: {ID: 0x0021, type: 0x20}, // BatteryPercentageRemaining
+                    attribute: {ID: 0x0055 /* presentValue */, type: 0x21}, // uint16
                     minimumReportInterval: 0,
-                    maximumReportInterval: constants.repInterval.HOUR,
-                    reportableChange: 2, // 1% (2 in ZCL 0-200 format)
+                    maximumReportInterval: constants.repInterval.MAX,
+                    reportableChange: 1,
                 },
             ]);
-            await batteryEndpoint.read("genPowerCfg", [0x0021, 0x0020]);
 
 
 

@@ -1,16 +1,16 @@
 [
   {
-    "fileName": "tlc_switch-1.1.3-78af7e0a-forced.zigbee",
+    "fileName": "tlc_switch-1.1.3-1cdac9b9-forced.zigbee",
     "fileVersion": 4294967295,
-    "fileSize": 182370,
-    "url": "https://github.com/GabrielBFern/tuya-zigbee-switch/raw/3e82b1dd0c30d635522e102395ce3909aac00d59/bin/router/REMOTE_LORATAP_SS9600ZB/tlc_switch-1.1.3-78af7e0a-forced.zigbee",
+    "fileSize": 182402,
+    "url": "https://github.com/GabrielBFern/tuya-zigbee-switch/raw/refs/heads/main/bin/router/REMOTE_LORATAP_SS9600ZB/tlc_switch-1.1.3-1cdac9b9-forced.zigbee",
     "imageType": 47119,
     "manufacturerCode": 4417,
-    "sha512": "4c6fef6ddfdaf1e519133dc706d3c9498c0b75b0e8c20c38b6b224d17015eb0e97aec4af15bfe879da6dd2c97031584cc08d4912ddd50ef2fdab6e47341f1f09",
+    "sha512": "c95cb2a775ddd511c309aa443ab1b36d2811e67fba85ed203b503402a04070dd07cc69db0ff25e6c42d2c107f865919180791e5be089bba025615eac11676067",
     "otaHeaderString": "Telink OTA Image\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
     "manufacturerName": [
       "_TZ3000_iszegwpd",
-      "iszegwpd"
+      "iszegwpiszegwpd"
     ]
   }
 ]
