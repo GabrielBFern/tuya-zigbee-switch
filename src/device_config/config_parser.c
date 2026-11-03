@@ -181,15 +181,17 @@ void parse_config() {
             leds[leds_cnt].pin     = pin;
             leds[leds_cnt].on_high = entry[3] != 'i';
             led_init(&leds[leds_cnt]);
+            
+            #define ARRAY_LEN(a) (sizeof(a) / sizeof((a)[0]))
 
-            for (int index = 0; index < 4; index++) {
+            for (int index = 0; index < MAX_RELAYS; index++) {
                 if (relay_clusters[index].indicator_led == NULL) {
                     relay_clusters[index].indicator_led = &leds[leds_cnt];
                     break;
                 }
             }
 
-            for (int index = 0; index < 4; index++) {
+            for (int index = 0; index < MAX_SWITCHES; index++) {
                 if (switch_clusters[index].indicator_led == NULL) {
                     switch_clusters[index].indicator_led = &leds[leds_cnt];
                     break;
@@ -197,7 +199,7 @@ void parse_config() {
             }
 
             if (!has_dedicated_status_led) {
-                for (int index = 0; index < 4; index++) {
+                for (int index = 0; index < ARRAY_LEN(network_indicator.leds); index++) {
                     if (network_indicator.leds[index] == NULL) {
                         network_indicator.leds[index] = &leds[leds_cnt];
                         break;
